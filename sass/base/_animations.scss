@@ -1,0 +1,57 @@
+/*Keframes for animations*/
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes moveInLeft {
+    /*initial*/
+    0% {
+        opacity: 0;
+        transform: translateX(-10rem);
+    }
+    80% {
+        transform: translateX(1.2rem);
+    }
+    /*final*/
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInRight {
+    /*initial*/
+    0% {
+        opacity: 0;
+        transform: translateX(10rem);
+    }
+    80% {
+        transform: translateX(-1.2rem);
+    }
+    /*final*/
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+@keyframes moveInBottom {
+    /*initial*/
+    0% {
+        opacity: 0;
+        transform: translateY(3rem);
+    }
+    /*final*/
+    100% {
+        opacity: 1;
+        transform: translate(0);
+    }
+}
+
+/*end Keyframes*/

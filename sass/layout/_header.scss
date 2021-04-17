@@ -1,0 +1,67 @@
+.header {
+    position: relative;
+    height: 85vh;
+
+    background-image: linear-gradient(to right bottom,
+    rgba($color-primary-light, 0.8),
+    rgba($color-primary-dark, 0.8)),
+    url('../img/hero-small.jpg');
+
+    background-size: cover;
+    background-position: top;
+
+    @supports(clip-path: polygon(0 0)) or (-webkit-clip-path: polygon(0 0)) {
+        /*clip-path: (x1 y1, x2 y2, x3 y3, x4 y4);
+        /**for a square 
+    clip-path:((0 0, 100% 0, 100% 100%, 0 100%);*/
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+        height: 95vh;
+    }
+
+    /*resolution of apple retina screen = 192dpi (dots per inch) [high res screen for reference]*/
+    /* 600px/16px = 37.5em & 2000px/16px = 125em*/
+    /*min-device-pixel-ratio:2 is for safari (2x pixels)*/
+    @media only screen and (min-resolution: 192dpi) and (min-width: 37.5em),
+    only screen and (-webkit-min-device-pixel-ratio:2) and (min-width: 37.5em),
+    only screen and (min-width: 125em) {
+        background-image: linear-gradient(to right bottom,
+        rgba($color-primary-light, 0.8),
+        rgba($color-primary-dark, 0.8)),
+        url('../img/hero.jpg');
+    }
+
+    @include respond(tab-port) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 80vh, 0 100%);
+    }
+    @include respond(phone) {
+
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+        clip-path: polygon(0 0, 100% 0, 100% 85vh, 0 100%);
+    }
+
+    &__logo-box {
+        position: absolute;
+        top: 4rem;
+        left: 4rem;
+        /*
+    top: 40px;
+    left: 40px;
+    */
+        animation: fadeIn 1s ease-in;
+    }
+    &__logo {
+        height: 3.5rem;
+        /*height: 35px;*/
+        width: auto;
+
+    }
+    &__text-box {
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+    }
+}
